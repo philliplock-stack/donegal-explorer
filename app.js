@@ -73,7 +73,7 @@ const birds = [
     photo: "assets/Red-Grouse.jpg",
     audio: "assets/Red-Grouse.mp3",
     credit: "Gustavo Zoladz"
-  }
+  },
  {
     id: "Sandwich-Tern",
     english: "Sandwich Tern",
