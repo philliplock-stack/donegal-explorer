@@ -74,7 +74,7 @@ const birds = [
     audio: "assets/Red-Grouse.mp3",
     credit: "Gustavo Zoladz"
   },
- {
+  {
     id: "Sandwich-Tern",
     english: "Sandwich Tern",
     irish: "Geabhróg Scothdhubh",
@@ -82,7 +82,6 @@ const birds = [
     audio: "assets/Sandwich-Tern.mp3",
     credit: "Vũ Bụi"
   }
-  
 ];
 
 // 2. AUTOMATICALLY BUILD THE GRID ON THE PAGE
@@ -91,6 +90,7 @@ const grid = document.getElementById('grid');
 birds.forEach(bird => {
   const card = document.createElement('div');
   card.className = 'bird-card';
+  card.id = `card-${bird.id}`; // FIXED: Added unique ID to card container for visual styling
   card.innerHTML = `
     <div class="card-trigger" onclick="playBirdCall('${bird.id}')">
       <img src="${bird.photo}" alt="${bird.english}">
@@ -107,40 +107,67 @@ birds.forEach(bird => {
   grid.appendChild(card);
 });
 
-// 3. AUDIO PLAYBACK CONTROLLER (With automatic 6-second cutoff)
+// 3. AUDIO PLAYBACK & VISUAL CONTROLLER (With automatic 6-second cutoff)
 let currentPlayingAudio = null;
-let audioTimeout = null; // Keeps track of our 6-second timer
+let currentPlayingCard = null; // Track visually highlighted card
+let audioTimeout = null; 
 
 function playBirdCall(birdId) {
   const audio = document.getElementById(`sound-${birdId}`);
+  const card = document.getElementById(`card-${birdId}`);
   if (!audio) return;
 
-  // Clear any existing timers and stop any currently playing bird
+  // Clear existing timers
   if (audioTimeout) {
     clearTimeout(audioTimeout);
   }
   
+  // Reset previously playing audio and clear highlight styling
   if (currentPlayingAudio) {
     currentPlayingAudio.pause();
     currentPlayingAudio.currentTime = 0;
   }
+  if (currentPlayingCard) {
+    currentPlayingCard.classList.remove('playing');
+  }
 
-  // Play the chosen bird call from the start
+  // Check if user re-tapped the exact same active bird to toggle it off manually
+  if (currentPlayingAudio === audio) {
+    currentPlayingAudio = null;
+    currentPlayingCard = null;
+    return;
+  }
+
+  // Play selection and inject visual highlight class
   audio.currentTime = 0;
   audio.play();
+  if (card) card.classList.add('playing');
+  
   currentPlayingAudio = audio;
+  currentPlayingCard = card;
 
-  // Automatically stop the sound and reset it after exactly 6 seconds (6000 milliseconds)
+  // Automatically drop the visual styling and sound after 6 seconds
   audioTimeout = setTimeout(() => {
     if (currentPlayingAudio === audio) {
       audio.pause();
       audio.currentTime = 0;
+      if (card) card.classList.remove('playing');
       currentPlayingAudio = null;
+      currentPlayingCard = null;
     }
   }, 6000); 
+
+  // Fallback: If audio track is naturally shorter than 6 seconds, wipe classes on end
+  audio.onended = () => {
+    if (card) card.classList.remove('playing');
+    if (currentPlayingAudio === audio) {
+      currentPlayingAudio = null;
+      currentPlayingCard = null;
+    }
+  };
 }
 
-// 4. REGISTER THE SERVICE WORKER (Makes it run offline like an installed app)
+// 4. REGISTER THE SERVICE WORKER
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./sw.js')
     .then(() => console.log("Service Worker Registered"))
