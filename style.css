@@ -261,3 +261,29 @@ header p {
 .back-btn:active {
   background-color: rgba(0, 92, 62, 0.08);
 }
+/* ==========================================================================
+   5. DESKTOP OPTIMIZATION FOR HOMEPAGE
+   ========================================================================== */
+@media (min-width: 768px) {
+  /* Shifts the layout from vertical stacking to side-by-side on computers */
+  .hero-content {
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    padding: 60px;
+  }
+
+  .home-header {
+    text-align: left !important;
+    width: 40% !important;
+  }
+
+  .home-header h1 {
+    font-size: 3.5rem !important;
+  }
+
+  .home-container {
+    width: 45% !important;
+    max-width: 450px !important;
+    margin-bottom: 0 !important;
+  }
+}
