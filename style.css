@@ -10,17 +10,26 @@ body {
   padding: 0;
   min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
-  background-color: #f7fafc; /* Standard clean backup color */
+  box-sizing: border-box;
 }
 
-/* TARGETS ONLY THE BIRD SUB-PAGE: Zero flashing on home page */
+/* 🏠 HOMEPAGE BACKGROUND: Uses donegal2.jpg with a cinematic dark tint overlay for high text contrast */
+body.home-page {
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)), url('./assets/donegal2.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+}
+
+/* 🐦 BIRD SUB-PAGE BACKGROUND: Keeps donegal1.jpg bright and vibrant */
 body.sub-page {
   background-image: url('./assets/donegal1.jpg') !important;
   background-size: cover !important;
   background-position: center !important;
   background-attachment: fixed !important;
   background-repeat: no-repeat !important;
-  background-color: #005c3e !important; /* Donegal green backup while loading */
+  background-color: #005c3e !important;
 }
 
 /* Explicit layout container adjustments to ensure image visibility */
