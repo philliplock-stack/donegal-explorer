@@ -121,3 +121,62 @@ header p {
   background-color: #fafbfd;
   font-weight: 500;
 }
+/* Home Page Layout Styles */
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  max-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.welcome-box {
+  background-color: white;
+  padding: 30px 20px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0, 92, 62, 0.08);
+}
+
+.welcome-box h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #005c3e; /* Donegal Green */
+  margin-top: 0;
+}
+
+.welcome-box p {
+  line-height: 1.6;
+  color: #4a5568;
+  margin-bottom: 30px;
+}
+
+/* Beautiful Donegal Gold Action Button */
+.start-btn {
+  display: inline-block;
+  background-color: #ffcc00; /* Donegal Gold */
+  color: #00422c; /* Dark Green Text */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.start-btn:active {
+  transform: scale(0.95);
+}
+
+/* Elegant Back Button on the Birds Sub-Page */
+.back-btn {
+  display: inline-block;
+  margin: 15px 0 5px 0;
+  color: #005c3e;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
