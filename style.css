@@ -180,3 +180,30 @@ header p {
   font-weight: 700;
   font-size: 0.9rem;
 }
+
+/* Full-Screen Moving GIF Background Cover */
+.hero-background {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Adjust path to where your gif is stored */
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), url('assets/waw-bg.gif');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Custom overlay adjustment for the home header to fit the transparency */
+.home-header {
+  background: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  padding: 40px 20px 10px 20px;
+}
+
+.home-header h1 {
+  text-shadow: 0 4px 8px rgba(0,0,0,0.5) !important;
+}
