@@ -235,3 +235,20 @@ header p {
 .back-btn:active {
   background-color: rgba(0, 92, 62, 0.08); /* Soft feedback tap on mobile */
 }
+/* ==========================================================================
+   3. ISOLATE BIRD PAGE BACKGROUND FROM HOMEPAGE VIDEO
+   ========================================================================== */
+
+/* This targets ONLY the body if it's loading the birds or gallery sub-pages */
+body:not(:has(.hero-video-container)) {
+  background: linear-gradient(rgba(247, 250, 252, 0.88), rgba(247, 250, 252, 0.92)), url('assets/donegal1.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Fixes any potential hidden layout block coloring over your background image */
+#grid {
+  background: transparent !important;
+}
