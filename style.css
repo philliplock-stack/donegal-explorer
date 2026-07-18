@@ -82,29 +82,30 @@ header p {
   margin: 0;
 }
 
-
 /* ==========================================================================
-   2. NEW HOMEPAGE VIDEO BACKGROUND STYLES
+   2. REFINED HOMEPAGE VIDEO BACKGROUND STYLES (Mobile Optimized)
    ========================================================================== */
 
-/* Container that locks everything into full-screen view */
+/* Container that locks everything into full-screen view safely */
 .hero-video-container {
   position: relative;
   width: 100%;
-  height: 100vh; /* Keeps it exactly the height of the phone screen */
+  min-height: 100dvh; /* Uses 'dvh' (dynamic viewport height) so mobile address bars don't cut off content */
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
 }
 
-/* The actual high-def video container */
+/* The actual background video loop */
 .bg-video {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* This makes it stretch perfectly without distorting */
+  object-fit: cover; /* Guarantees the video stretches perfectly without squishing */
   transform: translate(-50%, -50%);
-  z-index: 1; /* Moves it behind the content */
+  z-index: 0; /* Keeps it strictly in the basement layer */
 }
 
 /* The cinematic tint overlay */
@@ -114,78 +115,77 @@ header p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
-  z-index: 2; /* Sits directly on top of the video */
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65));
+  z-index: 1; /* Sits directly over the video, under the text */
 }
 
-/* Forces text content and boxes to sit proudly in front of the video layer */
+/* Houses your content and forces it on top of the video/overlay */
 .hero-content {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
+  z-index: 2; /* Explicitly brings text and boxes in front of everything */
   width: 100%;
-  height: 100%;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Aligns header to the top */
-  z-index: 3; /* Brings the text and boxes to the very front */
+  justify-content: space-between; /* Perfect spacing: Header top, Box center/bottom */
   box-sizing: border-box;
+  padding: 20px;
 }
 
-/* Custom overlay adjustment for the home header to fit the transparency */
+/* Transparency controls for the home header */
 .home-header {
   background: transparent !important;
   border-bottom: none !important;
   box-shadow: none !important;
-  padding: 40px 20px 10px 20px;
+  padding: 30px 10px 10px 10px;
   text-align: center;
+  width: 100%;
 }
 
 .home-header h1 {
-  color: #ffffff !important; /* Forces title to be white over the video */
+  color: #ffffff !important;
   text-shadow: 0 4px 10px rgba(0,0,0,0.8) !important;
   margin: 0;
+  font-size: 2.2rem;
 }
 
 .home-header p {
-  color: #ffcc00 !important; /* Donegal Gold for the subtitle */
+  color: #ffcc00 !important; /* Donegal Gold */
   text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-  margin-top: 5px;
+  margin: 8px 0 0 0;
+  font-size: 1.1rem;
 }
 
+/* Clean, modern content container */
 .home-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  max-width: 600px;
   width: 100%;
+  max-width: 500px;
   box-sizing: border-box;
-  margin-top: auto; /* Pushes the welcome box down a bit towards the center/bottom */
-  margin-bottom: auto;
+  margin-bottom: 40px; /* Leaves a comfortable gap at the bottom of the phone screen */
 }
 
 .welcome-box {
-  background-color: rgba(255, 255, 255, 0.95); /* Slight clean transparency */
+  background-color: rgba(255, 255, 255, 0.96); /* Elegant, slightly translucent white */
   padding: 30px 20px;
   border-radius: 20px;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  border: 1px solid rgba(0, 92, 62, 0.1);
-  width: 100%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .welcome-box h2 {
   font-family: 'Montserrat', sans-serif;
   color: #005c3e; /* Donegal Green */
-  margin-top: 0;
+  margin: 0 0 12px 0;
+  font-size: 1.4rem;
 }
 
 .welcome-box p {
   line-height: 1.6;
   color: #4a5568;
-  margin-bottom: 30px;
+  margin: 0 0 24px 0;
+  font-size: 0.95rem;
 }
 
 /* Beautiful Donegal Gold Action Button */
@@ -196,14 +196,14 @@ header p {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   text-decoration: none;
-  padding: 15px 30px;
+  padding: 14px 35px;
   border-radius: 30px;
-  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 204, 0, 0.4);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .start-btn:active {
-  transform: scale(0.95);
+  transform: scale(0.96);
 }
 
 /* Elegant Back Button on the Birds Sub-Page */
