@@ -28,92 +28,91 @@ body.sub-page {
 }
 
 /* ==========================================================================
-   2. HEADERS & BANNERS (MOBILE UNIVERSE DEFAULT)
+   2. HEADERS & BANNERS (UNIVERSAL BASE CONFIGS)
    ========================================================================== */
-/* Core sub-page header (Clean & transparent for the Birds Page) */
 header {
   background-color: transparent !important; /* Strips green banner background */
   color: white;
   text-align: center;
   padding: 20px 10px;
-  box-shadow: none !important;              /* Strips shadow boundary */
-  border-bottom: none !important;           /* Strips gold bottom trim border */
+  box-shadow: none !important;              
+  border-bottom: none !important;           
 }
 
 header h1 {
   font-weight: 700;
   margin: 0;
   font-size: 1.8rem;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.5);   /* Soft shadow glow for readability */
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);   
 }
 
 header p {
   margin: 6px 0 0 0;
   font-size: 0.95rem;
   font-family: 'Open Sans', sans-serif;
-  color: #ffcc00; /* Donegal Gold */
+  color: #ffcc00; 
   font-weight: 600;
   text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-/* Homepage Header Grid Block (Mobile Default: Clean, Flat & Transparent) */
-.home-header {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  text-align: center !important;
-  background: transparent !important; 
-  border: none !important;              
-  box-shadow: none !important;         
-  padding: 0 !important;               
-  margin: 0 !important;                
-  width: 100% !important;
-}
-
 .home-header h1 {
-  color: #ffffff;
-  text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+  color: #ffffff !important;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.8) !important;
   font-size: 2.2rem;
-  margin: 10px 0 4px 0;
+  margin: 0 0 4px 0;
 }
 
 .home-header p {
-  color: #ffcc00;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  color: #ffcc00 !important;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6) !important;
   font-size: 1.1rem;
   margin: 0;
 }
 
 /* ==========================================================================
-   3. LOGO CONFIGURATIONS
+   3. LOGO CONFIGURATIONS & PHONE ISOLATION (Under 767px Wide)
    ========================================================================== */
 .app-logo {
   display: block;
   object-fit: contain;
 }
 
-/* Homepage Mobile Logo Limit */
-.home-logo {
-  width: 25vw;
-  max-width: 100px;
-  height: auto;
-  margin: 0 auto;
-  filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.3));
+/* 📱 MOBILE RESPONSIVE ENGINE */
+@media (max-width: 767px) {
+  .home-header {
+    display: flex !important;
+    flex-direction: column !important; /* Forces layout to stack cleanly on phone screen sizes */
+    align-items: center !important;
+    text-align: center !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 auto 20px auto !important;
+    width: 100% !important;
+  }
+
+  .home-logo {
+    width: 28% !important;
+    max-width: 105px !important;
+    height: auto !important;
+    margin: 0 auto 15px auto !important;
+    filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.3));
+  }
+
+  .header-text-group {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; 
+    text-align: center !important;
+    width: 100% !important;
+  }
 }
 
-/* Birds Header Logo Style: Centered standalone brand asset with 200px lock */
+/* Birds Page Standing Header Asset */
 .header-logo {
-  width: auto !important;          /* Fluidly scales wide based on aspect ratio */
-  height: 200px !important;        /* Explicit structural height lock */
+  width: auto !important;          
+  height: 200px !important;        
   margin: 20px auto 10px auto !important;
   filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.4));
-}
-
-.header-text-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
 }
 
 /* ==========================================================================
@@ -207,36 +206,44 @@ header p {
 .back-btn { display: inline-block; color: #ffffff; background-color: #005c3e; border: 2px solid #ffcc00; text-decoration: none; font-weight: 700; padding: 8px 20px; border-radius: 20px; text-shadow: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
 
 /* ==========================================================================
-   5. DESKTOP ADAPTABILITY RESPONSIVE CONTROLS (Wider Screens Only)
+   5. DESKTOP ADAPTABILITY RESPONSIVE CONTROLS (Wider Screens Only - 768px+)
    ========================================================================== */
 @media (min-width: 768px) {
   .hero-content {
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: 40px;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    padding: 40px !important;
   }
 
+  /* 🖥️ Side-by-side alignment strictly for desktop viewports */
   .home-header {
-    flex-direction: row;
-    align-items: center;
-    text-align: left;
-    width: 50%;
-    gap: 25px;
+    display: flex !important;
+    flex-direction: row !important; 
+    align-items: center !important;
+    text-align: left !important;
+    width: 50% !important;
+    gap: 25px !important;
   }
 
   .home-header .home-logo {
-    margin: 0;
-    width: 110px;
+    margin: 0 !important;
+    width: 110px !important;
+    max-width: 110px !important;
+    height: auto !important;
   }
 
+  /* Keeps text block stacked vertically on separate lines next to the logo */
   .header-text-group {
-    align-items: flex-start;
-    text-align: left;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    width: auto !important;
   }
 
   .home-container {
-    width: 40%;
-    margin-bottom: 0;
+    width: 40% !important;
+    margin-bottom: 0 !important;
   }
 }
