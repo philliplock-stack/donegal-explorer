@@ -1,16 +1,18 @@
 /* ==========================================================================
-   1. GLOBAL APP BACKGROUNDS & SUB-PAGE SETUP
+   1. GLOBAL THEME, TYPOGRAPHY & CORE FONTS
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
 
-/* Default base settings for all pages */
+/* Unified baseline for all layouts */
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  font-family: 'Open Sans', sans-serif;
+  /* UNIFIED FONT: Matching the premium Montserrat styling throughout the entire site */
+  font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* 🏠 HOMEPAGE BACKGROUND: Uses donegal2.jpg with a cinematic dark tint overlay for high text contrast */
@@ -22,147 +24,51 @@ body.home-page {
   background-repeat: no-repeat !important;
 }
 
-/* 🐦 BIRD SUB-PAGE BACKGROUND: Keeps donegal1.jpg bright and vibrant */
+/* 🐦 SUB-PAGES BACKGROUND (Birds & Gallery): Keeps donegal1.jpg bright and vibrant */
 body.sub-page {
   background-image: url('./assets/donegal1.jpg') !important;
   background-size: cover !important;
   background-position: center !important;
   background-attachment: fixed !important;
   background-repeat: no-repeat !important;
-  background-color: #005c3e !important;
+  background-color: #005c3e !important; /* Donegal Green backup while loading */
 }
 
-/* Explicit layout container adjustments to ensure image visibility */
+/* Clean layout overlays */
 #grid, .bird-grid {
   background: transparent !important;
 }
 
 /* ==========================================================================
-   2. HEADER, GRID, AND INTERACTIVE BIRD CARDS
+   2. UNIFIED HEADERS & BRAND SIGNATURES
    ========================================================================== */
 
+/* Core sub-page header */
 header {
-  background-color: #005c3e; /* Donegal Green */
+  background-color: #005c3e; /* Donegal Green Anchor */
   color: white;
   text-align: center;
   padding: 20px 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  border-bottom: 4px solid #ffcc00; /* Donegal Gold */
+  border-bottom: 4px solid #ffcc00; /* Donegal Gold Border */
 }
 
 header h1 {
-  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   margin: 0;
   font-size: 2rem;
+  letter-spacing: -0.5px;
 }
 
 header p {
-  margin: 5px 0 0 0;
+  margin: 6px 0 0 0;
   font-size: 1rem;
-  color: #e2e8f0;
+  font-family: 'Open Sans', sans-serif; /* Soft, clean secondary font for legibility */
+  color: #ffcc00; /* Matches the Donegal Gold accent */
+  font-weight: 600;
 }
 
-.bird-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 15px;
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.bird-card {
-  background-color: rgba(255, 255, 255, 0.96) !important; /* Semi-opaque clean card surface */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.18) !important; /* Enhanced pop shadow over scenery */
-  text-align: center;
-  padding-bottom: 10px;
-  border: 2px solid transparent;
-  transition: transform 0.2s, border-color 0.2s;
-  cursor: pointer;
-}
-
-.bird-card:active {
-  transform: scale(0.95);
-}
-
-.bird-card.playing {
-  border-color: #ffcc00; /* Donegal Gold highlight when active */
-  background-color: #f0fff4;
-}
-
-.bird-card img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-}
-
-.bird-card h3 {
-  font-family: 'Montserrat', sans-serif;
-  margin: 10px 0 2px 0;
-  font-size: 1rem;
-  color: #2d3748;
-}
-
-.photo-credit {
-  font-size: 0.75rem;
-  color: #a0aec0;
-  margin: 0;
-}
-
-/* ==========================================================================
-   3. REFINED HOMEPAGE VIDEO BACKGROUND STYLES (Mobile Optimized)
-   ========================================================================== */
-
-/* Container that locks everything into full-screen view safely */
-.hero-video-container {
-  position: relative;
-  width: 100%;
-  min-height: 100dvh; /* Dynamic viewport height against mobile browser bars */
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-/* The actual background video loop */
-.bg-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-}
-
-/* The cinematic tint overlay */
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65));
-  z-index: 1;
-}
-
-/* Houses your homepage content over the video background */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  padding: 20px;
-}
-
-/* Transparency controls for the home header specifically */
+/* Homepage Header Overrides (For transparent video/image backdrop) */
 .home-header {
   background: transparent !important;
   border-bottom: none !important;
@@ -175,18 +81,74 @@ header p {
 .home-header h1 {
   color: #ffffff !important;
   text-shadow: 0 4px 10px rgba(0,0,0,0.8) !important;
-  margin: 0;
   font-size: 2.2rem;
 }
 
 .home-header p {
   color: #ffcc00 !important; /* Donegal Gold */
   text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-  margin: 8px 0 0 0;
   font-size: 1.1rem;
 }
 
-/* Welcome block container layouts */
+/* ==========================================================================
+   3. CARD & CONTENT MODULES (Mobile Optimized Grid)
+   ========================================================================== */
+
+.bird-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bird-card {
+  background-color: rgba(255, 255, 255, 0.96) !important; 
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.18) !important; 
+  text-align: center;
+  padding-bottom: 12px;
+  border: 3px solid transparent; /* Smooth border transition placeholder */
+  transition: transform 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.bird-card:active {
+  transform: scale(0.95);
+}
+
+/* Playing Highlight: Transitions card border straight into Donegal Gold */
+.bird-card.playing {
+  border-color: #ffcc00 !important; 
+  background-color: #f0fff4 !important;
+}
+
+.bird-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.bird-card h3 {
+  margin: 12px 0 2px 0;
+  font-size: 1rem;
+  color: #005c3e; /* Standardized card headers to Donegal Green */
+  font-weight: 700;
+}
+
+.photo-credit {
+  font-size: 0.75rem;
+  color: #718096;
+  margin: 4px 0 0 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* ==========================================================================
+   4. NAVIGATION BUTTONS & WELCOME MODULES
+   ========================================================================== */
+
 .home-container {
   width: 100%;
   max-width: 500px;
@@ -204,10 +166,10 @@ header p {
 }
 
 .welcome-box h2 {
-  font-family: 'Montserrat', sans-serif;
-  color: #005c3e;
+  color: #005c3e; /* Donegal Green */
   margin: 0 0 12px 0;
   font-size: 1.4rem;
+  font-weight: 700;
 }
 
 .welcome-box p {
@@ -215,30 +177,45 @@ header p {
   color: #4a5568;
   margin: 0 0 24px 0;
   font-size: 0.95rem;
+  font-family: 'Open Sans', sans-serif;
 }
 
-/* Donegal Gold Action Buttons */
+/* Stacked Link Action Controls */
+.button-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+/* Primary Action Link (Donegal Gold) */
 .start-btn {
   display: inline-block;
-  background-color: #ffcc00;
-  color: #00422c;
-  font-family: 'Montserrat', sans-serif;
+  width: 80%;
+  max-width: 280px;
+  background-color: #ffcc00; /* Donegal Gold */
+  color: #00422c; /* Deep Contrast Green Text */
   font-weight: 700;
   text-decoration: none;
-  padding: 14px 35px;
+  padding: 14px 20px;
   border-radius: 30px;
   box-shadow: 0 4px 12px rgba(255, 204, 0, 0.4);
   transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+/* Secondary Action Link (Donegal Green) */
+.secondary-btn {
+  background-color: #005c3e !important; 
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(0, 92, 62, 0.3) !important;
 }
 
 .start-btn:active {
   transform: scale(0.96);
 }
 
-/* ==========================================================================
-   4. NAVIGATION ELEMENTS
-   ========================================================================== */
-
+/* Back Navigation Element Row */
 .back-navigation {
   width: 100%;
   display: flex;
@@ -248,39 +225,53 @@ header p {
 
 .back-btn {
   display: inline-block;
-  color: #005c3e;
+  color: #ffffff; 
+  background-color: #005c3e; /* Green Pill Badge for Sub-page consistency */
+  border: 2px solid #ffcc00;  /* Tied with Gold Border trim */
   text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 0.95rem;
-  padding: 8px 16px;
+  font-size: 0.9rem;
+  padding: 8px 20px;
   border-radius: 20px;
-  transition: background-color 0.2s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
 }
 
 .back-btn:active {
-  background-color: rgba(0, 92, 62, 0.08);
+  transform: scale(0.95);
 }
+
 /* ==========================================================================
-   5. DESKTOP OPTIMIZATION FOR HOMEPAGE
+   5. SCREEN ADAPTABILITY (Desktop Responsive Optimization)
    ========================================================================== */
+
+/* Houses your homepage content over the photo background */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
 @media (min-width: 768px) {
-  /* Shifts the layout from vertical stacking to side-by-side on computers */
   .hero-content {
     flex-direction: row !important;
     justify-content: space-around !important;
     padding: 60px;
   }
-
   .home-header {
     text-align: left !important;
     width: 40% !important;
   }
-
   .home-header h1 {
     font-size: 3.5rem !important;
   }
-
   .home-container {
     width: 45% !important;
     max-width: 450px !important;
