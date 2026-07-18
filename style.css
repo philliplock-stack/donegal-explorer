@@ -17,10 +17,11 @@ body.home-page {
   background-size: cover;
 }
 
+/* 🐦 SUB-PAGES BACKGROUND (Birds & Gallery): Wallpaper with a subtle tint overlay instead of a solid green backup */
 body.sub-page {
-  background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.35)), url('./assets/donegal1.jpg') no-repeat center center fixed;
-  background-size: cover;
-  background-color: #005c3e;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('./assets/donegal1.jpg') no-repeat center center fixed !important;
+  background-size: cover !important;
+  background-color: #1a202c !important; /* Neutral dark slate fallback instead of solid Donegal green */
 }
 
 #grid, .bird-grid {
