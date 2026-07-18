@@ -6,6 +6,7 @@ const ASSETS = [
   '/style.css',
   '/app.js',
   '/manifest.json',
+  '/assets/waw-bg.gif',
   '/assets/chough.jpg',
   '/assets/chough.mp3',
   '/assets/corncrake.jpg',
