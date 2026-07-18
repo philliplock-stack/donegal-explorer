@@ -206,12 +206,27 @@ header p {
   transform: scale(0.96);
 }
 
-/* Elegant Back Button on the Birds Sub-Page */
+/* Container that centers the navigation row across the screen */
+.back-navigation {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0 5px 0;
+}
+
+/* Elegant, centered Back Button styling */
 .back-btn {
   display: inline-block;
-  margin: 15px 0 5px 20px;
-  color: #005c3e;
+  color: #005c3e; /* Donegal Green */
   text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background-color 0.2s;
+}
+
+.back-btn:active {
+  background-color: rgba(0, 92, 62, 0.08); /* Soft feedback tap on mobile */
 }
