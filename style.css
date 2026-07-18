@@ -259,11 +259,14 @@ header p {
 }
 
 @media (min-width: 768px) {
-  .hero-content {
-    flex-direction: row !important;
-    justify-content: space-around !important;
-    padding: 60px;
+  /* ... your existing desktop rules ... */
+
+  /* Shifts the text block to align neatly with the side-by-side logo on desktop */
+  .header-text-group {
+    align-items: flex-start !important;
+    text-align: left !important;
   }
+}
 
   .home-header {
     display: flex !important;
@@ -316,8 +319,10 @@ header p {
   margin-bottom: 6px;
 }
 
+/* Centers the text block perfectly on mobile screens */
 .header-text-group {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center; /* FIXED: Centers both lines on mobile */
+  text-align: center;
 }
