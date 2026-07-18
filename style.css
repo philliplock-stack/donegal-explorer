@@ -10,7 +10,7 @@ body {
   min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
   /* Adds a smooth tinted gradient over the image so your bird text remains highly readable */
-  background: linear-gradient(rgba(247, 250, 252, 0.85), rgba(247, 250, 252, 0.9)), url('assets/donegal1.jpg');
+  background: linear-gradient(rgba(247, 250, 252, 0.4), rgba(247, 250, 252, 0.5)), url('assets/donegal1.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
