@@ -260,20 +260,43 @@ header p {
 }
 
 @media (min-width: 768px) {
+  /* Shifts the main sections to side-by-side layout on desktop */
   .hero-content {
     flex-direction: row !important;
     justify-content: space-around !important;
     padding: 60px;
   }
+
+  /* 🏠 DESKTOP HEADER LOOK: Aligns logo and text horizontally side-by-side */
   .home-header {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 25px; /* Spaces out the logo from the text titles */
     text-align: left !important;
-    width: 40% !important;
+    width: 50% !important;
   }
+
+  /* Adjusts the logo to stay centered with the side text */
+  .home-header .home-logo {
+    margin: 0 !important;
+    height: 110px !important; /* Locks size perfectly to balance the text height */
+  }
+
+  /* Grouping title and paragraph to stack vertically next to the logo */
   .home-header h1 {
-    font-size: 3.5rem !important;
+    font-size: 3.2rem !important;
+    margin: 0 0 4px 0 !important;
   }
+
+  .home-header p {
+    font-size: 1.2rem !important;
+    margin: 0 !important;
+  }
+
+  /* Homepage box container adjustments for desktop layout balance */
   .home-container {
-    width: 45% !important;
+    width: 40% !important;
     max-width: 450px !important;
     margin-bottom: 0 !important;
   }
