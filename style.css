@@ -4,17 +4,30 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
 
-body {
+body.sub-page, body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
   font-family: 'Open Sans', sans-serif;
-  /* Adds a smooth tinted gradient over the image so your bird text remains highly readable */
-  background: linear-gradient(rgba(247, 250, 252, 0.2), rgba(247, 250, 252, 0.3)), url('assets/donegal1.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  
+  /* 1. REMOVED THE WHITE TINT: Your photo will now display at 100% full, rich color */
+  background-image: url('./assets/donegal1.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-color: #005c3e !important; /* Donegal green backup while loading */
+}
+
+/* 2. ENSURE NOTHING ELSE IS WASHING IT OUT */
+#grid, .bird-grid {
+  background: transparent !important;
+}
+
+/* 3. MAKE CARDS POP: Gives your white bird cards a clean shadow so they sit beautifully over the crisp photo */
+.bird-card {
+  background-color: rgba(255, 255, 255, 0.95) !important; /* Crisp white card background */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15) !important; /* Stronger shadow so text is easy to read over your image */
 }
 
 header {
