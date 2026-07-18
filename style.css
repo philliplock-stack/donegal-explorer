@@ -1,144 +1,179 @@
-/* Import modern, premium Google Fonts directly */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+/* ==========================================================================
+   1. YOUR ORIGINAL APP STYLES (Grid, Cards, Header & Fonts)
+   ========================================================================== */
 
-/* Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
 body {
-  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-  background-color: #f7f9fb;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #2D3748;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f7fafc;
 }
 
-/* Donegal Green & Gold Header */
 header {
-  text-align: center;
-  padding: 30px 20px;
-  background: linear-gradient(135deg, #005c3e 0%, #00422c 100%); /* Rich Donegal Green */
+  background-color: #005c3e; /* Donegal Green */
   color: white;
-  width: 100%;
-  box-sizing: border-box;
-  border-bottom: 6px solid #ffcc00; /* Donegal Gold Stripe */
-  box-shadow: 0 4px 15px rgba(0, 92, 62, 0.2);
+  text-align: center;
+  padding: 20px 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-bottom: 4px solid #ffcc00; /* Donegal Gold */
 }
 
 header h1 {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  margin: 0 0 6px 0;
-  font-size: 1.8rem;
-  letter-spacing: -0.5px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  margin: 0;
+  font-size: 2rem;
 }
 
 header p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #ffcc00; /* Donegal Gold for the subtitle */
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  margin: 5px 0 0 0;
+  font-size: 1rem;
+  color: #e2e8f0;
 }
 
-/* Grid Layout */
 .bird-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-  width: 100%;
-  max-width: 600px;
-  padding: 24px 16px;
-  box-sizing: border-box;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* Premium Card Design */
 .bird-card {
   background-color: white;
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05), 0 2px 6px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid rgba(0, 92, 62, 0.08); /* Faint green border */
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-/* Interactive Tap & Hover Effects */
-.card-trigger {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  text-align: center;
+  padding-bottom: 10px;
+  border: 2px solid transparent;
+  transition: transform 0.2s, border-color 0.2s;
   cursor: pointer;
 }
 
-/* When tapped/clicked, the card shrinks slightly and gets a Donegal Gold glow */
 .bird-card:active {
-  transform: scale(0.96);
-  box-shadow: 0 0 15px rgba(255, 204, 0, 0.6); 
-  border-color: #ffcc00;
+  transform: scale(0.95);
 }
 
-.card-trigger img {
+.bird-card.playing {
+  border-color: #ffcc00; /* Donegal Gold highlight when active */
+  background-color: #f0fff4;
+}
+
+.bird-card img {
   width: 100%;
-  height: 130px;
+  height: 120px;
   object-fit: cover;
-  display: block;
-  border-bottom: 4px solid #ffcc00; /* Subtle Gold separator under image */
 }
 
-/* Text Container inside Card */
-.bird-info {
-  padding: 12px 10px 8px 10px;
-  text-align: center;
-}
-
-/* English Bird Name */
-.bird-info h3 {
+.bird-card h3 {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  margin: 0;
-  font-size: 1.05rem;
-  color: #1a202c;
+  margin: 10px 0 2px 0;
+  font-size: 1rem;
+  color: #2d3748;
 }
 
-/* Irish Bird Name - Styled beautifully in Donegal Green */
-.irish-name {
-  margin: 4px 0 0 0;
-  font-style: italic;
-  color: #005c3e; /* Donegal Green */
-  font-weight: 700;
-  font-size: 0.9rem;
-}
-
-/* Photo Credit Plain Text */
 .photo-credit {
-  font-size: 0.7rem;
-  color: #718096;
-  text-align: center;
-  padding: 8px 10px;
-  border-top: 1px dashed #e2e8f0;
-  background-color: #fafbfd;
-  font-weight: 500;
+  font-size: 0.75rem;
+  color: #a0aec0;
+  margin: 0;
 }
-/* Home Page Layout Styles */
+
+
+/* ==========================================================================
+   2. NEW HOMEPAGE VIDEO BACKGROUND STYLES
+   ========================================================================== */
+
+/* Container that locks everything into full-screen view */
+.hero-video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Keeps it exactly the height of the phone screen */
+  overflow: hidden;
+}
+
+/* The actual high-def video container */
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This makes it stretch perfectly without distorting */
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Moves it behind the content */
+}
+
+/* The cinematic tint overlay */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+  z-index: 2; /* Sits directly on top of the video */
+}
+
+/* Forces text content and boxes to sit proudly in front of the video layer */
+.hero-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Aligns header to the top */
+  z-index: 3; /* Brings the text and boxes to the very front */
+  box-sizing: border-box;
+}
+
+/* Custom overlay adjustment for the home header to fit the transparency */
+.home-header {
+  background: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  padding: 40px 20px 10px 20px;
+  text-align: center;
+}
+
+.home-header h1 {
+  color: #ffffff !important; /* Forces title to be white over the video */
+  text-shadow: 0 4px 10px rgba(0,0,0,0.8) !important;
+  margin: 0;
+}
+
+.home-header p {
+  color: #ffcc00 !important; /* Donegal Gold for the subtitle */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  margin-top: 5px;
+}
+
 .home-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
+  padding: 20px;
   max-width: 600px;
   width: 100%;
   box-sizing: border-box;
+  margin-top: auto; /* Pushes the welcome box down a bit towards the center/bottom */
+  margin-bottom: auto;
 }
 
 .welcome-box {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.95); /* Slight clean transparency */
   padding: 30px 20px;
   border-radius: 20px;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  border: 1px solid rgba(0, 92, 62, 0.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  border: 1px solid rgba(0, 92, 62, 0.1);
+  width: 100%;
 }
 
 .welcome-box h2 {
@@ -174,68 +209,9 @@ header p {
 /* Elegant Back Button on the Birds Sub-Page */
 .back-btn {
   display: inline-block;
-  margin: 15px 0 5px 0;
+  margin: 15px 0 5px 20px;
   color: #005c3e;
   text-decoration: none;
   font-weight: 700;
   font-size: 0.9rem;
-}
-
-/* Container that locks everything into full-screen view */
-.hero-video-container {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-/* The actual high-def video container */
-.bg-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -2;
-  transform: translate(-50%, -50%);
-  object-fit: cover; /* Keeps aspect ratio perfect */
-}
-
-/* The cinematic tint overlay */
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
-  z-index: -1;
-}
-
-/* Forces text content and boxes to sit proudly in front of the video layer */
-.hero-content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 1;
-}
-
-/* Transparency controls for the home header */
-.home-header {
-  background: transparent !important;
-  border-bottom: none !important;
-  box-shadow: none !important;
-  padding: 40px 20px 10px 20px;
-}
-
-.home-header h1 {
-  text-shadow: 0 4px 10px rgba(0,0,0,0.6) !important;
-}
-.home-header h1 {
-  text-shadow: 0 4px 8px rgba(0,0,0,0.5) !important;
 }
