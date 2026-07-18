@@ -293,7 +293,7 @@ header p {
     max-width: 450px !important;
     margin-bottom: 0 !important;
   }
-} /* <--- CRITICAL: This bracket shuts off the desktop rules! */
+}
 
 /* ==========================================================================
    6. LOGO EMBED STYLES (Universal & Mobile Defaults)
@@ -301,17 +301,17 @@ header p {
 
 /* 📱 MOBILE DEFAULT HEADER LOOK (Stacked vertically) */
 .home-header {
-  display: flex;
-  flex-direction: column; /* Forces logo and text to stack vertically on mobile */
-  align-items: center;
-  text-align: center;
-  width: 100%;
+  display: flex !important;
+  flex-direction: column !important; /* FORCES stacking on mobile layout */
+  align-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
 }
 
 .app-logo {
-  display: block;
-  object-fit: contain;
-  margin: 0 auto 10px auto;
+  display: block !important;
+  object-fit: contain !important;
+  margin: 0 auto 10px auto !important;
 }
 
 .home-logo {
@@ -329,9 +329,9 @@ header p {
 }
 
 .header-text-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centers the text lines completely on mobile */
-  text-align: center;
-  width: 100%;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important; /* Perfectly centered text alignment on mobile */
+  text-align: center !important;
+  width: 100% !important;
 }
