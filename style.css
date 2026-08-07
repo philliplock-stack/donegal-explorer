@@ -14,7 +14,7 @@ body {
 
 /* 🏠 HOMEPAGE BACKGROUND: Lightened gradient overlay for a much brighter donegal2.jpg view */
 body.home-page {
-  background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)), url('./assets/donegal2.jpg') no-repeat center center fixed !important;
+  background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.1)), url('./assets/donegal2.jpg') no-repeat center center fixed !important;
   background-size: cover !important;
 }
 
