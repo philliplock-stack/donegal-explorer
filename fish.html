@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Prevents browser caching during updates -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <title>Donegal Fish Identification</title>
+  <link rel="stylesheet" href="style.css?v=1.2">
+</head>
+<body class="sub-page">
+
+  <header>
+    <img src="./assets/logo.png" alt="Donegal Explorer Logo" class="app-logo header-logo">
+    <h1>Donegal Sea & River Fish</h1>
+    <p>Tap a fish to view details, catch locations & cooking tips</p>
+  </header>
+
+  <div class="back-navigation">
+    <a href="index.html" class="back-btn">← Back to Home</a>
+  </div>
+
+  <main class="bird-grid" id="fish-grid"></main>
+
+  <!-- POP-UP MODAL CONTAINER -->
+  <div id="fish-modal" class="modal-overlay" onclick="closeFishModal(event)">
+    <div class="modal-content">
+      <button class="modal-close" onclick="forceCloseModal()">&times;</button>
+      <img id="modal-secondary-img" src="" alt="Fish detail view">
+      <h2 id="modal-title"></h2>
+      <p id="modal-irish" class="irish-name"></p>
+      
+      <div class="modal-info-block">
+        <h3>📍 Where to Catch</h3>
+        <p id="modal-location"></p>
+      </div>
+
+      <div class="modal-info-block">
+        <h3>🍳 Cooking & Prep</h3>
+        <p id="modal-cooking"></p>
+      </div>
+
+      <div class="modal-info-block">
+        <h3>ℹ️ General Info</h3>
+        <p id="modal-info"></p>
+      </div>
+      
+      <div class="photo-credit" id="modal-credit"></div>
+    </div>
+  </div>
+
+  <script src="fish.js?v=1.2"></script>
+</body>
+</html>
