@@ -164,6 +164,7 @@ header p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 14px; /* ADDED: Creates vertical space between the buttons */
 }
 
 .start-btn {
