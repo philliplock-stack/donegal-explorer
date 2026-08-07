@@ -161,10 +161,10 @@ header p {
 }
 
 .button-stack {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px; /* ADDED: Creates vertical space between the buttons */
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 16px !important; /* Forces 16px vertical gap between all child buttons */
 }
 
 .start-btn {
@@ -179,11 +179,7 @@ header p {
   border-radius: 30px;
   box-shadow: 0 4px 12px rgba(255, 204, 0, 0.4);
   text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth interaction */
-}
-
-.start-btn:active {
-  transform: scale(0.96);
+  margin: 0 !important; /* Strips any legacy margins that fight flex gap */
 }
 
 .bird-grid {
