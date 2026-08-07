@@ -12,9 +12,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* 🏠 HOMEPAGE BACKGROUND: Lightened gradient overlay for a much brighter donegal2.jpg view */
 body.home-page {
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)), url('./assets/donegal2.jpg') no-repeat center center fixed;
-  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)), url('./assets/donegal2.jpg') no-repeat center center fixed !important;
+  background-size: cover !important;
 }
 
 /* 🐦 SUB-PAGES BACKGROUND (Birds & Gallery): Wallpaper with a subtle tint overlay instead of a solid green backup */
