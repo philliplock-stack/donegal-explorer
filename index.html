@@ -35,12 +35,26 @@
 
   </main>
 
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js')
-        .then(() => console.log("Service Worker Registered"))
-        .catch(err => console.log("Service Worker Failed", err));
+ <script>
+  // UNREGISTER ALL ACTIVE SERVICE WORKERS & CLEAR CACHES
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+      for (let registration of registrations) {
+        registration.unregister();
+        console.log("Service Worker successfully unregistered.");
+      }
+    });
+
+    // Wipes out local offline cache storage
+    if ('caches' in window) {
+      caches.keys().then(function(names) {
+        for (let name of names) {
+          caches.delete(name);
+          console.log("Cache cleared:", name);
+        }
+      });
     }
-  </script>
+  }
+</script>
 </body>
 </html>
