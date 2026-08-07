@@ -6,10 +6,10 @@ const fishes = [
     irish: "Ronnach",
     mainPhoto: "assets/mackerel.jpg",
     secondaryPhoto: "assets/mackerel-detail.jpg",
-    location: "Pier fishing at Killybegs, Rathmullan, and Malin Head during summer months.",
+    location: "Pier fishing at Killybegs, Rathmullan, and Portnablagh during summer months.",
     cooking: "Best grilled, barbecued, or smoked fresh on the day. High in Omega-3.",
     info: "Fast-swimming shoaling fish with distinctive blue-green tiger stripes across its back.",
-    credit: "Local Angling Donegal"
+    credit: "Karography "
   },
   {
     id: "pollack",
