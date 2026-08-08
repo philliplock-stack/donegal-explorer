@@ -6,7 +6,7 @@ const fishes = [
     irish: "Ronnach",
     mainPhoto: "assets/mackerel.jpg",
     secondaryPhoto: "assets/mackerel-detail.jpg",
-    location: "Pier fishing at Killybegs, Rathmullan, and Portnablagh during summer months. Use feathers off the pier or boat",
+    location: "Pier fishing at Killybegs, Rathmullan, and Portnablagh during summer months. Use feathers off the pier or boat.",
     cooking: "Best grilled, barbecued, or smoked fresh on the day. High in Omega-3.",
     info: "Fast-swimming shoaling fish with distinctive blue-green tiger stripes across its back.",
     credit: "Karography"
@@ -17,10 +17,10 @@ const fishes = [
     irish: "Mongaach",
     mainPhoto: "assets/pollack.jpg",
     secondaryPhoto: "assets/pollack-detail.jpg",
-    location: "Rocky shorelines, kelp beds, and deep wrecks around Atlantic shores.",
-    cooking: "Excellent alternative to Cod. Great battered for fish & chips or baked with herb crust.",
-    info: "Aggressive predator with a prominent lower jaw. Prefers rocky weed-covered bottoms.",
-    credit: "Sea Angling Ireland"
+    location: "Rocky shorelines, kelp beds, and deep wrecks around Atlantic shores. Use spinners from the shore or feathers from boat.",
+    cooking: "Excellent alternative to Cod. Great battered for fish & chips or pan fried with seasoned flour and butter. Goes well with baby boiled spuds.",
+    info: "Not to be confused with Coalfish (Coalie). Note the differences: Pollack as a lateral line that curves upward or kinks near the frontand the lower jaw sticks out much further (an underbite).",
+    credit: "Phil Lock"
   },
   {
     id: "sea-trout",
