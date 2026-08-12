@@ -17,22 +17,88 @@ const fishes = [
     irish: "Mongaach",
     mainPhoto: "assets/pollack.jpg",
     secondaryPhoto: "assets/pollack-detail.jpg",
+    location: "Rocky shorelines, kelp beds, and deep wrecks around Atlantic shores. Use spinners from the shore or feathers from a boat.",
+    cooking: "Excellent alternative to Cod. Great battered for fish & chips or pan fried with seasoned flour and butter. Goes well with baby boiled spuds.",
+    info: "Not to be confused with Coalfish (Coalie). Note the differences: Pollack as a lateral line that curves upward or kinks near the frontand the lower jaw sticks out much further (an underbite).",
+    credit: "Phil Lock"
+  },
+  {
+    id: "ballan-wrasse",
+    english: "Ballan wrasse",
+    irish: "Ballach breac",
+    mainPhoto: "assets/ballan-wrasse.jpg",
+    secondaryPhoto: "assets/ballan-wrasse-detail.jpg",
+    location: "Deep, kelp-rich rocky gullies offering prime territory for big wrasse. Inishbofin (Inis Bó Finne, meaning 'island of the white cow') beyond the football pitch",
+    cooking: "Only an adventurous cook would try, very boney.",
+    info: "Extremely variable color ranging from bright emerald green to reddish-brown with intricate pale spotting, featuring thick lips and heavy scales. Careful of the dorsal spikes!",
+    credit: "Phil Lock"
+  },
+  {
+    id: "coalfish",
+    english: "Coalfish",
+    irish: "Glasán",
+    mainPhoto: "assets/coalfish.jpg",
+    secondaryPhoto: "assets/coalfish-detail.jpg",
+    location: "Rocky shorelines, kelp beds, and deep wrecks around Atlantic shores. Use spinners from the shore or feathers from a boat.",
+    cooking: "Dont be put off by the grey flesh that whitens when cooked. Pat the skin and flesh dry with a paper towel, dust lightly with seasoned flour, fry skin-side down first in hot oil and butter, spoon melted butter over the flesh until opaque.",
+    info: "Called black pollack or glassaun when small. Dark green or blackish-green back with a nearly straight, distinct white lateral line.",
+    credit: "Phil Lock"
+  },
+  {
+    id: "pollack",
+    english: "Pollack",
+    irish: "Mongaach",
+    mainPhoto: "assets/pollack.jpg",
+    secondaryPhoto: "assets/pollack-detail.jpg",
     location: "Rocky shorelines, kelp beds, and deep wrecks around Atlantic shores. Use spinners from the shore or feathers from boat.",
     cooking: "Excellent alternative to Cod. Great battered for fish & chips or pan fried with seasoned flour and butter. Goes well with baby boiled spuds.",
     info: "Not to be confused with Coalfish (Coalie). Note the differences: Pollack as a lateral line that curves upward or kinks near the frontand the lower jaw sticks out much further (an underbite).",
     credit: "Phil Lock"
   },
   {
-    id: "sea-trout",
-    english: "Sea Trout",
-    irish: "Breac Geal",
-    mainPhoto: "assets/seatrout.jpg",
-    secondaryPhoto: "assets/seatrout-detail.jpg",
-    location: "Estuaries and river mouths around River Eske and Lackagh River.",
-    cooking: "Pan-fry in butter with lemon and herbs or gently poach.",
-    info: "Anadromous form of brown trout that migrates to sea before returning to local rivers to spawn.",
-    credit: "Inland Fisheries Ireland"
-  }
+    id: "pollack",
+    english: "Pollack",
+    irish: "Mongaach",
+    mainPhoto: "assets/pollack.jpg",
+    secondaryPhoto: "assets/pollack-detail.jpg",
+    location: "Rocky shorelines, kelp beds, and deep wrecks around Atlantic shores. Use spinners from the shore or feathers from boat.",
+    cooking: "Excellent alternative to Cod. Great battered for fish & chips or pan fried with seasoned flour and butter. Goes well with baby boiled spuds.",
+    info: "Not to be confused with Coalfish (Coalie). Note the differences: Pollack as a lateral line that curves upward or kinks near the frontand the lower jaw sticks out much further (an underbite).",
+    credit: "Phil Lock"
+  },
+  {
+    id: "pollack",
+    english: "Pollack",
+    irish: "Mongaach",
+    mainPhoto: "assets/pollack.jpg",
+    secondaryPhoto: "assets/pollack-detail.jpg",
+    location: "Rocky shorelines, kelp beds, and deep wrecks around Atlantic shores. Use spinners from the shore or feathers from boat.",
+    cooking: "Excellent alternative to Cod. Great battered for fish & chips or pan fried with seasoned flour and butter. Goes well with baby boiled spuds.",
+    info: "Not to be confused with Coalfish (Coalie). Note the differences: Pollack as a lateral line that curves upward or kinks near the frontand the lower jaw sticks out much further (an underbite).",
+    credit: "Phil Lock"
+  },
+  {
+    id: "pollack",
+    english: "Pollack",
+    irish: "Mongaach",
+    mainPhoto: "assets/pollack.jpg",
+    secondaryPhoto: "assets/pollack-detail.jpg",
+    location: "Rocky shorelines, kelp beds, and deep wrecks around Atlantic shores. Use spinners from the shore or feathers from boat.",
+    cooking: "Excellent alternative to Cod. Great battered for fish & chips or pan fried with seasoned flour and butter. Goes well with baby boiled spuds.",
+    info: "Not to be confused with Coalfish (Coalie). Note the differences: Pollack as a lateral line that curves upward or kinks near the frontand the lower jaw sticks out much further (an underbite).",
+    credit: "Phil Lock"
+  },
+  {
+    id: "pollack",
+    english: "Pollack",
+    irish: "Mongaach",
+    mainPhoto: "assets/pollack.jpg",
+    secondaryPhoto: "assets/pollack-detail.jpg",
+    location: "Rocky shorelines, kelp beds, and deep wrecks around Atlantic shores. Use spinners from the shore or feathers from boat.",
+    cooking: "Excellent alternative to Cod. Great battered for fish & chips or pan fried with seasoned flour and butter. Goes well with baby boiled spuds.",
+    info: "Not to be confused with Coalfish (Coalie). Note the differences: Pollack as a lateral line that curves upward or kinks near the frontand the lower jaw sticks out much further (an underbite).",
+    credit: "Phil Lock"
+  },
 ];
 
 // 2. RENDER THE GRID
